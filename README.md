@@ -53,7 +53,7 @@ cost(i,k) = /   0                                                 if k-i = 1,
 ```
 
 where `ℓ_ik` is the arc-length (sum of edge lengths) from fence-post `i` to `k`,
-so that `(ℓ_ij)/(ℓ_ik)` and `(ℓ_jk)/(ℓ_ik)` sum to one and are the relative
+so that `(ℓ_ij/ℓ_ik)` and `(ℓ_jk/ℓ_ik)` sum to one and are the relative
 probabilities of the break occurring on either side of `j`.
 
 This function may be defined using dynamic programming to fill the upper triangle
