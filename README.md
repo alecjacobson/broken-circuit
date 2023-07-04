@@ -49,7 +49,7 @@ to find a break drawn with uniform probability between fence-posts `i` and
 ```
 cost(i,k) = /   0                                                        if k-i = 1,
             |  ℓ_ij + min (ℓ_ij/ℓ_ik) cost(i,j) + (ℓ_jk/ℓ_ik) cost(j,k)  otherwise.
-            \ i<j<k
+            \        i<j<k
 ```
 
 where `ℓ_ik` is the arc-length (sum of edge lengths) from fence-post `i` to `k`,
