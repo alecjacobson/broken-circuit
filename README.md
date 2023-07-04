@@ -19,7 +19,7 @@ Utilizing the conduction of the fence, a different solution would be to travel
 to the midpoint of the fence and connect a positive charge. If the charge
 completes the circuit then we know the break is _behind_ this point along the
 fence, otherwise the break remains _beyond_ this point along the fence.
-Recording this information then splitting the side with the break recrusively,
+Recording this information then splitting the side with the break recursively,
 this [**bisection method**](https://en.wikipedia.org/wiki/Bisection_method) will
 find the break in $O(\log n)$ _tests_. However, the distance traveled to perform
 each of these tests can be as long or even longer than simply walking the entire
