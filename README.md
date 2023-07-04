@@ -10,10 +10,10 @@ Suppose that you have an electric fence in the form of a wire polygon with fence
 posts as corners. There's been exactly one break in the wire somewhere unknown.
 To find which segment of the wire polygon is broken, one solution is to walk the
 entire perimeter of the polygon. Naturally the worst case requires walking
-$\sum_i \ell_{i=1}^n$ distance for a fence with $n$ segments. If we expect that
+$\sum\limits_{i=1}^n \ell_i$ distance for a fence with $n$ segments. If we expect that
 the break could be anywhere along the fence with uniform probability, then the
 expected distance traveled for this **brute force method** to find the break will be
-$\frac{1}{2}\sum_{i=1}^n \ell_i$.
+$\frac{1}{2} \sum\limits_{i=1}^n \ell_i$.
 
 Utilizing the conduction of the fence, a different solution would be to travel
 to the midpoint of the fence and connect a positive charge. If the charge
@@ -29,7 +29,7 @@ perimeter.
 
 For example, if the fence is a unit meter circle, then the brute force method travels
 worst case 2π meters and on average π meters. The bisection method always
-travels the same distance regardless of where the break is: ≈4.9620998 meters ($2+ \sqrt{2} + \sqrt{2-sqrt{2}} + \sqrt{2 - \sqrt{\sqrt{2} + 2}} + \dots$).
+travels the same distance regardless of where the break is: ≈4.9620998 meters ($2+ \sqrt{2} + \sqrt{2-\sqrt{2}} + \sqrt{2 - \sqrt{\sqrt{2} + 2}} + \dots$).
 
 On the other hand, for an extreme star-shaped polygon where every other point is
 placed on the unit meter circle then the origin, bisection will only visit the origin
@@ -63,17 +63,11 @@ along the way.
 ![](farm-dynamic-programming.gif)
 
 While this does require $O(n^2)$ _computer operations_ to fill in, the
-distance traveled along the determined route will be optimal on average.
+distance traveled along the determined route will be optimally small _on average_.
 
-The dynamic programming solution may be optimal on average but sometimes worse
-than bisection or brute force for a given instance (e.g., brute force will
-immediately find a break a segment from the start).  I'm not sure if this
-worst-case performance can be improved.
+Sometimes the distance is worse than bisection or brute force for a given instance (e.g., brute force will
+immediately find a break a segment from the start).  I'm not sure if this worst-case performance can be improved.
 
-
-_Thanks to the Banh-mi Lab Group Meeting for helping work through this problem.
-Especially Abhishek who first proposed the complete dynamic
-programming solution._
 
 ## Code
 
@@ -84,3 +78,6 @@ edges and computes their probability weights means.
 ![](farm-plot.gif)
 
 
+_Thanks to the Banh-mi Lab Group Meeting for helping work through this problem.
+Especially Abhishek who first proposed the complete dynamic
+programming solution._
